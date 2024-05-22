@@ -34,4 +34,7 @@ locust -f Assignment_Solution_parametrize_NestedBorland.py --worker
 locust -f Assignment_Solution_parametrize_NestedBorland.py --master --expect-worker 2 --headless -u 4 -r 2
 locust -f Assignment_Solution_parametrize_NestedBorland.py --worker #worker 1
 locust -f Assignment_Solution_parametrize_NestedBorland.py --worker #worker 2
+
+locust --config config/master.yaml
+locust --config config/worker.yaml
 ```
