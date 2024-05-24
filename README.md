@@ -37,4 +37,16 @@ locust -f Assignment_Solution_parametrize_NestedBorland.py --worker #worker 2
 
 locust --config config/master.yaml
 locust --config config/worker.yaml
+
+locust -f CompleteBookingSolution_MutipleUser_ExternalCSV.py
+locust -f CompleteBookingSolution_MutipleUser_ExternalCSV.py --worker --master-host 55.91.153.180
+```
+
+## Docker-Compose
+
+```bash
+docker-compose config
+docker-compose up master
+docker-compose up worker
+docker-compose scale worker=2
 ```
