@@ -50,3 +50,16 @@ docker-compose up master
 docker-compose up worker
 docker-compose scale worker=2
 ```
+
+## InfluxDB
+
+```bash
+docker exec -it influxdb influx
+```
+
+```influx
+create database DemoDB_Locust2
+use DemoDB_Locust2
+show measurements
+select * from ResponseTable
+```

@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  master:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8089:8089/tcp
+      - 5557:5557/tcp
+    container_name: locust
+    volumes:
+      - ./:/locust
+    command: ["locust", "-f", "/locust/influxdb_python.py", "-r", "1", "-c", "1", "--no-web"]
+
+  influxdb:
+    image: influxdb:1.7.10
+    container_name: influxdb
+    ports:
+      - 8086:8086
+    volumes:
+      - influxdb:/var/lib/influxdb
+
+volumes:
+  influxdb:
